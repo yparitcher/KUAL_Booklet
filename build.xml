@@ -27,12 +27,16 @@
 	<target name="compile" depends="prepare, strip-parser">
 		<javac source="1.4" target="1.4" includeantruntime="false" bootclasspathref="classpath.jdk14" classpathref="classpath.lib" srcdir="src" destdir="${build.dir}" debug="true" debuglevel="lines,vars,source">
 			<include name="com/mobileread/ixtab/**/*.java"/>
+			<exclude name="com/mobileread/ixtab/**/KualKindlet*.java"/>
+			<exclude name="com/mobileread/ixtab/**/LauncherKindletJailbreak.java"/>
+			<exclude name="com/mobileread/ixtab/**/ui/v1/Kual*.java"/>
 		</javac>
 	</target>
 
 	<target name="build" depends="compile">
 		<echo level="info">Launching build targets</echo>
 		<antcall target="restore-parser"/>
+		<!--
 		<antcall target="build-kdk">
 			<param name="kdk-version" value="1.0"/>
 		</antcall>
@@ -40,6 +44,7 @@
 		<antcall target="build-kdk">
 			<param name="kdk-version" value="2.0"/>
 		</antcall>
+		-->
 		<antcall target="build-booklet"/>
 	</target>
 
