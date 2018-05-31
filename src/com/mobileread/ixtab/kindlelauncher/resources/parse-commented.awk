@@ -82,7 +82,7 @@ BEGIN { #{{{
 	# Append the first character of the awk binary used to interpret this script.
 	# This gives the user an indication of whether he's using busybox awk or GNU awk.
 	callern=split(ARGV[0], callerary, "/")
-	VERSION="${repository.version} (unknown," substr(callerary[callern], 0 , 1) ")"
+	VERSION="@repository.version@ (@repository.date@," substr(callerary[callern], 0 , 1) ")"
 
 	# usage 1: scan EXTENSIONDIR {{{
 	#      awk -f parse-commented.awk < /dev/null

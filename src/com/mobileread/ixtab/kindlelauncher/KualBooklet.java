@@ -68,12 +68,12 @@ public class KualBooklet extends AbstractBooklet implements ActionListener {
 	private String commandToRunOnExit = null;
 	private String dirToChangeToOnExit = null;
 
-	final String CROSS = "\u00D7"; //  - match parser script
-	final String ATTN = "\u25CF"; //  - match parser script
-	final String RARROW = "\u25B6"; // 
-	final String LARROW = "\u25C0"; // 
-	final String UARROW = "\u25B2"; // 
-	final String BULLET = "\u25AA"; // 
+	final String CROSS = "\u00D7"; // × - match parser script
+	final String ATTN = "\u25CF"; // ● - match parser script
+	final String RARROW = "\u25B6"; // ▶
+	final String LARROW = "\u25C0"; // ◀
+	final String UARROW = "\u25B2"; // ▲
+	final String BULLET = "\u25AA"; // ▪
 	final String PATH_SEP = "/";
 
 	private Container rootContainer = null;

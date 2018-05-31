@@ -93,7 +93,7 @@ public class KUIAdapter extends UIAdapter {
 	}
 
 	public void suicide(BookletContext context) {
-		int code =61442;
+		int code = 61442;
 		//code = 61442;
 		KeyEvent k = new KeyEvent(obGetContainer(context), KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, code, (char)0);
 		obGetContainer(context).dispatchEvent(k);
