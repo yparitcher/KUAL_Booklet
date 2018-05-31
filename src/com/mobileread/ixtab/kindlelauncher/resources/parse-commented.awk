@@ -2039,9 +2039,10 @@ function get_model(    file,line,device) {#{{{ >>global MODEL; return MODEL or `
 		# Handle the new device ID scheme...
 		if ( MODEL == "Unknown" ) {
 			device = substr(line, 4, 3)
-			MODEL =   device ~ /^(0G1)|(0G2)|(0G4)|(0G5)|(0G6)|(0G7)|(0KB)|(0KC)|(0KD)|(0KE)|(0KF)|(0KG)$/ ? "KindlePaperWhite3" \
+			MODEL =   device ~ /^(0G1)|(0G2)|(0G4)|(0G5)|(0G6)|(0G7)|(0KB)|(0KC)|(0KD)|(0KE)|(0KF)|(0KG)|(0LK)|(0LL)$/ ? "KindlePaperWhite3" \
 				: device ~ /^(0GC)|(0GD)|(0GR)|(0GS)|(0GT)|(0GU)$/ ? "KindleOasis" \
 				: device ~ /^(0DU)|(0K9)|(0KA)$/ ? "KindleBasic2" \
+				: device ~ /^(0LM)|(0LN)|(0LP)|(0LQ)|(0P1)|(0P2)|(0P6)|(0P7)|(0P8)|(0S1)|(0S2)|(0S3)|(0S4)|(0S7)|(0SA)$/ ? "KindleOasis2" \
 				: "Unknown"
 		}
 	}
