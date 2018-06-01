@@ -11,7 +11,7 @@
 
 	<path id="classpath.lib">
 		<fileset dir="lib" includes="**/*.jar"/>
-		<fileset dir="/home/niluje/Kindle/Kindlet-Dev/fw-592" includes="**/*.jar"/>
+		<fileset dir="${build.classpath.592}" includes="**/*.jar"/>
 	</path>
 
 	<target name="clean">
