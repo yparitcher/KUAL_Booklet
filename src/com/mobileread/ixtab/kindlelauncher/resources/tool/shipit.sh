@@ -5,7 +5,7 @@
 ##
 
 # Check args
-if ( $# < 2 ) ; then
+if (( $# < 2 )) ; then
 	echo "Not enough args!"
 	exit 1
 fi

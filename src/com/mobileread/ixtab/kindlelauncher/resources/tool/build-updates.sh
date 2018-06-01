@@ -7,6 +7,9 @@ HACKNAME="KUALBooklet"
 PKGNAME="${HACKNAME}"
 PKGVER="${1%%-g*}"
 
+# Setup KindleTool packaging metadata flags to avoid cluttering the invocations
+KT_PM_FLAGS=( "-xPackageName=${PKGNAME}" "-xPackageVersion=${1}" "-xPackageAuthor=ixtab, NiLuJe, twobob, stepk, coplate" "-xPackageMaintainer=coplate, NiLuJe" "-X" )
+
 # We need kindletool (https://github.com/NiLuJe/KindleTool) in $PATH
 if (( $(kindletool version | wc -l) == 1 )) ; then
 	HAS_KINDLETOOL="true"
@@ -30,9 +33,9 @@ svn cat http://svn.ak-team.com/svn/Configs/trunk/Kindle/Touch_Hacks/Common/lib/l
 cp -f ../../../../../../../KUALBooklet.jar ../booklet/install/KUALBooklet.jar
 
 # Install (>= 5.1.2)
-kindletool create ota2 -d kindle5 -s 1679530004 -C ../booklet/install Update_${PKGNAME}_${PKGVER}_install.bin
+kindletool create ota2 "${KT_PM_FLAGS[@]}" -d kindle5 -s 1679530004 -C ../booklet/install Update_${PKGNAME}_${PKGVER}_install.bin
 # Uninstall
-kindletool create ota2 -d kindle5 -C ../booklet/uninstall Update_${PKGNAME}_${PKGVER}_uninstall.bin
+kindletool create ota2 "${KT_PM_FLAGS[@]}" -d kindle5 -C ../booklet/uninstall Update_${PKGNAME}_${PKGVER}_uninstall.bin
 
 # Move our updates
 rm -f ../dist/*.bin
