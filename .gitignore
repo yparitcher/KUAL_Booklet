@@ -6,5 +6,7 @@ dist/
 lib/Kindlet-1.*.jar
 lib/kaf.jar
 lib/utilities.jar
+lib/concierge-1.0.0.jar
+lib/json_simple-1.1.jar
 .project
 build-local.properties
