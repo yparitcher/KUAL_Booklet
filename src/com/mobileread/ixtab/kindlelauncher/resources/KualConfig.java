@@ -91,6 +91,8 @@ public class KualConfig {
 			modelnick = "KOA2";
 		} else if ("KindlePaperWhite4".equals(model)) {
 			modelnick = "PW4";
+		} else if ("KindleBasic3".equals(model)) {
+			modelnick = "KT4";
 		}
 
 		return modelnick;
