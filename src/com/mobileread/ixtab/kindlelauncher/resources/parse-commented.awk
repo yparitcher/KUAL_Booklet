@@ -2045,6 +2045,7 @@ function get_model(    file,line,device) {#{{{ >>global MODEL; return MODEL or `
 				: device ~ /^(0LM)|(0LN)|(0LP)|(0LQ)|(0P1)|(0P2)|(0P6)|(0P7)|(0P8)|(0S1)|(0S2)|(0S3)|(0S4)|(0S7)|(0SA)$/ ? "KindleOasis2" \
 				: device ~ /^(0PP)|(0T1)|(0T2)|(0T3)|(0T4)|(0T5)|(0T6)|(0T7)|(0TJ)|(0TK)|(0TL)|(0TM)|(0TN)|(102)|(103)|(16Q)|(16R)|(16S)|(16T)|(16U)|(16V)$/ ? "KindlePaperWhite4" \
 				: device ~ /^(10L)|(0WF)|(0WG)|(0WH)|(0WJ)|(0VB)$/ ? "KindleBasic3" \
+				: device ~ /^(11L)|(0WQ)|(0WP)|(0WN)|(0WM)|(0WL)$/ ? "KindleOasis3" \
 				: "Unknown"
 		}
 	}
