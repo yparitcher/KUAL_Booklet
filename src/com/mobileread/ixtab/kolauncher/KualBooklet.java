@@ -242,9 +242,9 @@ public class KualBooklet extends AbstractBooklet implements ActionListener {
 	// NOTE: Again, adapted from KPVBooklet ;)
 	private void updateCCDB() {
 		long lastAccess = new Date().getTime() / 1000L;
-		String tag = "KOL";	// Fancy sash in the top right corner of the thumbnail ;)
+		String tag = "KOReader";	// Fancy sash in the top right corner of the thumbnail ;)
 		// NOTE: Hard-code the path, as no-one should be using a custom .kual trigger...
-		String path = JSONObject.escape("/mnt/us/documents/KOL.kol");
+		String path = JSONObject.escape("/mnt/us/documents/KOReader.kol");
 		String json_query = "{\"filter\":{\"Equals\":{\"value\":\"" + path + "\",\"path\":\"location\"}},\"type\":\"QueryRequest\",\"maxResults\":1,\"sortOrder\":[{\"order\":\"descending\",\"path\":\"lastAccess\"},{\"order\":\"ascending\",\"path\":\"titles[0].collation\"}],\"startIndex\":0,\"id\":1,\"resultType\":\"fast\"}";
 		JSONObject json = ccPerform("query", json_query);
 		JSONArray values = (JSONArray) json.get("values");
@@ -328,7 +328,8 @@ public class KualBooklet extends AbstractBooklet implements ActionListener {
 		 *    for user interaction; handle interaction.
 		 */
 		try {
-			initializeState(); // step 1
+			cleanupTemporaryDirectory();
+			//initializeState(); // step 1
 			//initializeUI(); // step 3
 			// Monitor messages from backgrounded script. Monitoring ends in 10
 			// s. (20 * 500ms)
@@ -465,14 +466,14 @@ public class KualBooklet extends AbstractBooklet implements ActionListener {
 
 		updateDisplayedLaunchers(depth = 0, true, null);
 	}
-*/
+
 	private void initializeState() throws IOException, InterruptedException,
 			Exception {
 
 		cleanupTemporaryDirectory();
 		//runParser();
 	}
-/*
+
 	private void runParser() throws IOException, InterruptedException,
 			Exception {
 		// run the parser script and read its output (we may get cached data)

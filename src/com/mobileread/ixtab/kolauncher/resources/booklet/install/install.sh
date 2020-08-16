@@ -34,7 +34,7 @@ otautils_update_progressbar
 
 
 logmsg "I" "install" "" "creating application"
-touch "/mnt/us/documents/KOL.kol"
+touch "/mnt/us/documents/KOReader.kol"
 
 otautils_update_progressbar
 

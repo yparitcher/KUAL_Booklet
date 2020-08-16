@@ -23,7 +23,7 @@ sqlite3 "/var/local/appreg.db" < "appreg.uninstall.sql"
 otautils_update_progressbar
 
 logmsg "I" "uninstall" "" "removing application"
-rm -f "/mnt/us/documents/KOL.kol"
+rm -f "/mnt/us/documents/KOReader.kol"
 
 otautils_update_progressbar
 
