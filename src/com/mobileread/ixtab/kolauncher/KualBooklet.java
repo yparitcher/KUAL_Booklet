@@ -3,18 +3,8 @@ package com.mobileread.ixtab.kolauncher;
 
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URI;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -30,16 +20,12 @@ import com.mobileread.ixtab.kolauncher.resources.KualLog;
 public class KualBooklet extends AbstractBooklet {
 
 	public KualBooklet() {
-		//new KualLog().append("KualBooklet");
-		new java.util.Timer().schedule(
-		        new java.util.TimerTask() {
-		            public void run() {
-		               KualBooklet.this.longStart();
-		            }
-		        },
-		        0
-		);
-
+		try {
+			execute();
+			suicide(obGetBookletContext(3));
+		} catch (Throwable t) {
+			throw new RuntimeException(t);
+		}
 	}
 
 	private BookletContext obGetBookletContext(int j){
@@ -154,14 +140,6 @@ public class KualBooklet extends AbstractBooklet {
 			new KualLog().append(e.toString());
 		}
 	}
-
-	private void longStart() {
-		try {
-			suicide(obGetBookletContext(3));
-		} catch (Throwable t) {
-			throw new RuntimeException(t);
-		}
-	}
 /*
 
 	private void killKnownOffenders(Runtime rtime) {
@@ -208,7 +186,6 @@ public class KualBooklet extends AbstractBooklet {
 		//new KualLog().append("stop()");
 
 		try {
-			execute();
 			// NOTE: This can be a bit racey with destroy(),
 			//	 so sleep for a teeny tiny bit so that our execute() call actually goes through...
 			Thread.sleep(175);
