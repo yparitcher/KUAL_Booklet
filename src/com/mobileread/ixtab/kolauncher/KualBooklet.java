@@ -5,14 +5,12 @@ package com.mobileread.ixtab.kolauncher;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.amazon.kindle.booklet.AbstractBooklet;
-import com.amazon.kindle.booklet.BookletContext;
 import com.amazon.kindle.restricted.content.catalog.ContentCatalog;
 import com.amazon.kindle.restricted.runtime.Framework;
 import com.mobileread.ixtab.kolauncher.resources.KualLog;
