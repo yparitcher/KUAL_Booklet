@@ -22,51 +22,11 @@ public class KualBooklet extends AbstractBooklet {
 	public KualBooklet() {
 		try {
 			execute();
-			suicide(obGetBookletContext(3));
+			suicide();
 		} catch (Throwable t) {
 			throw new RuntimeException(t);
 		}
 	}
-
-	private BookletContext obGetBookletContext(int j){
-		BookletContext bc = null;
-		Method[] methods = AbstractBooklet.class.getDeclaredMethods();
-		for (int i = 0; i < methods.length; i++) {
-			if (methods[i].getReturnType() == BookletContext.class) {
-				// Double check that it takes no arguments, too...
-				System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOO");
-				Class[] params = methods[i].getParameterTypes();
-				System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOO");
-				if (params.length == 0) {
-					try {
-						System.out.println(i);
-						System.out.println(methods[i]);
-						System.out.println(methods[i].getReturnType().getName());
-						System.out.println(methods[i].getName());
-						System.out.println(methods[i].getParameterCount());
-						System.out.println(this);
-						System.out.println("---------------------------------------");
-						bc = (BookletContext) methods[i].invoke(this, null);
-						System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOO");
-						System.out.println(bc);
-					} catch (IllegalAccessException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (IllegalArgumentException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (InvocationTargetException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					break;
-				}
-			}
-		}
-		System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOO");
-		return bc;
-	}
-
 	// And this was always obfuscated...
 	// NOTE: Pilfered from KPVBooklet (https://github.com/koreader/kpvbooklet/blob/master/src/com/github/chrox/kpvbooklet/ccadapter/CCAdapter.java)
 	/**
@@ -124,7 +84,7 @@ public class KualBooklet extends AbstractBooklet {
 		//new KualLog().append("Set KUAL's lastAccess ccdb entry to " + lastAccess);
 	}
 
-	private void suicide(BookletContext context) {
+	private void suicide() {
 		try {
 			// Send a BACKWARD lipc event to background the app (-> stop())
 			// NOTE: This has a few side-effects, since we effectively skip create & longStart
@@ -140,21 +100,7 @@ public class KualBooklet extends AbstractBooklet {
 			new KualLog().append(e.toString());
 		}
 	}
-/*
 
-	private void killKnownOffenders(Runtime rtime) {
-		// Let's tidy up some known offenders...
-		// Call this right before executing a menu action
-		String offenders = "matchbox-keyboard kterm skipstone cr3";
-		try {
-			rtime.exec("/usr/bin/killall " + offenders, null); // gently
-			rtime.exec("/usr/bin/killall -9 " + offenders, null); // forcefully
-		} catch (Throwable t) {
-			new KualLog().append(t.toString());
-			//setStatus("Exception logged.");
-		}
-	}
-*/
 	private Process execute()
 			throws IOException, InterruptedException {
 
