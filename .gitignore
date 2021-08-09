@@ -2,6 +2,7 @@ build/
 bin/
 *.azw2
 KUALBooklet.jar
+KOLBooklet.jar
 dist/
 lib/Kindlet-1.*.jar
 lib/kaf.jar
