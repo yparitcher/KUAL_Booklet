@@ -20,7 +20,7 @@ public class KualBooklet extends AbstractBooklet {
 	public KualBooklet() {
 		try {
 			execute();
-			suicide();
+			//suicide();
 		} catch (Throwable t) {
 			throw new RuntimeException(t);
 		}
