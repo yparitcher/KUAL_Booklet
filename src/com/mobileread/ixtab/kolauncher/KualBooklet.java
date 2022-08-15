@@ -91,12 +91,12 @@ public class KualBooklet extends AbstractBooklet {
 		if ("root".equals(currentUsername)) {} else {
 			if (new File("/var/local/mkk/gandalf").exists()) {
 				return Runtime.getRuntime().exec(
-					new String[] { "/var/local/mkk/su", "-s", "/bin/ash", "-c", "{ /mnt/us/koreader/koreader.sh --kual --asap ; } 2>>/var/tmp/KOL.log &" }, null,
+					new String[] { "/var/local/mkk/su", "-s", "/bin/ash", "-c", "{ /mnt/us/koreader/koreader.sh --kual --framework_stop ; } 2>>/var/tmp/KOL.log &" }, null,
 					new File("/mnt/us/koreader/"));
 			}
 		}
 		return Runtime.getRuntime().exec(
-			new String[] { "/bin/sh", "-c", "{ /mnt/us/koreader/koreader.sh --kual --asap ; } 2>>/var/tmp/KOL.log &" }, null,
+			new String[] { "/bin/sh", "-c", "{ /mnt/us/koreader/koreader.sh --kual --framework_stop ; } 2>>/var/tmp/KOL.log &" }, null,
 			new File("/mnt/us/koreader/"));
 	}
 
