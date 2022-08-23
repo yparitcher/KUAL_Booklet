@@ -19,8 +19,8 @@ public class KualBooklet extends AbstractBooklet {
 
 	public KualBooklet() {
 		try {
+			updateCCDB();
 			execute();
-			//suicide();
 		} catch (Throwable t) {
 			throw new RuntimeException(t);
 		}
@@ -82,23 +82,6 @@ public class KualBooklet extends AbstractBooklet {
 		//new KualLog().append("Set KUAL's lastAccess ccdb entry to " + lastAccess);
 	}
 
-	private void suicide() {
-		try {
-			// Send a BACKWARD lipc event to background the app (-> stop())
-			// NOTE: This has a few side-effects, since we effectively skip create & longStart
-			//	 on subsequent start-ups, and we (mostly) never go to destroy().
-			// NOTE: Incidentally, this is roughly what the [Home] button does on the Touch, so, for the same reason,
-			//	 it's recommended not to tap Home on that device ;).
-			// NOTE: Setting the unloadPolicy to unloadOnPause in the app's appreg properties takes care of that,
-			//	 stop() then *always* leads to destroy() :).
-			//Runtime.getRuntime().exec("lipc-set-prop com.lab126.appmgrd backward 0");
-			// Send a STOP lipc event to exit the app (-> stop() -> destroy()). More closely mirrors the Kindlet lifecycle.
-			Runtime.getRuntime().exec("lipc-set-prop com.lab126.appmgrd stop app://com.mobileread.ixtab.kolauncher");
-		} catch (IOException e) {
-			new KualLog().append(e.toString());
-		}
-	}
-
 	private Process execute()
 			throws IOException, InterruptedException {
 
@@ -148,7 +131,6 @@ public class KualBooklet extends AbstractBooklet {
 			//	 so sleep for a tiny bit so our commandToRunOnExit actually has a chance to run...
 			Thread.sleep(175);
 			//cleanupTemporaryDirectory();
-			updateCCDB();
 		} catch (Exception ignored) {
 			// Avoid the framework shouting at us...
 		}
