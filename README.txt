@@ -4,7 +4,7 @@
 http://www.mobileread.com/forums/showthread.php?p=2389078
 
 Supporting the DX, K2, K2i, K3 Keyboard, Kindle 4, Kindle Touch, PW, PW2,
-along with the KV, KT2, PW3, KOA, KT3, KOA2, PW4, KT4, KOA3 & PW5.
+along with the KV, KT2, PW3, KOA, KT3, KOA2, PW4, KT4, KOA3, PW5 & KS.
 
 NOTE: Flashed 3.2.1 DX's may fail to handle kindlets properly.
 There is a workaround tested by wakawakawaka (thanks to him for the DX testing)
@@ -13,7 +13,7 @@ Workaround 3.2.1 DX Link is above.
 In addition, REALLY old firmwares of the Kindle 2 did not support kindlets.
 Please update these to later firmwares to get support.
 NOTE: On the KV, KT2 & PW3, we may only run on select firmware versions.
-NOTE: On the KOA, KT3, KOA2, PW4, KT4, KOA3 & PW5, Kindlets are deprecated. As such, only the Booklet version is usable.
+NOTE: On the KOA, KT3, KOA2, PW4, KT4, KOA3, PW5 & KS, Kindlets are deprecated. As such, only the Booklet version is usable.
 
 
 SUPPORT: READ THIS >>>
@@ -60,7 +60,7 @@ Run it by clicking new kindlet document in your list.
 Put KUAL-KDK-2.0.azw2 in documents folder.
 Run it by clicking icon.
 
-(KOA, KT3, KOA2, PW4, KT4, KOA3, PW5)
+(KOA, KT3, KOA2, PW4, KT4, KOA3, PW5, KS)
 Install the KUALBooklet update package via MRPI.
 Run it by clicking KUAL document.
 
