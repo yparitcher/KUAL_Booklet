@@ -29,7 +29,7 @@ rm -f ../../../../../../../dist/*.tar.xz
 unix2dos -k ../dist/*.txt ../../../../../../../*.txt
 
 # And package it (flatten the directory structure)
-tar --exclude='MR_THREAD.txt' --transform 's,^.*/,,S' --show-transformed-names -cvJf ../../../../../../../dist/KOL-${KUAL_VERSION}-${KUAL_DATE}.tar.xz ../dist/* ../../../../../../../*.azw2 ../../../../../../../*.txt
+tar --exclude='MR_THREAD.txt' --transform 's,^.*/,,S' --show-transformed-names -cvJf ../../../../../../../dist/KOL-${KUAL_VERSION}-${KUAL_DATE}.tar.xz ../dist/* ../../../../../../../*.txt
 
 # Git handles this properly, but it shouts at us a bit...
 dos2unix -k ../dist/*.txt ../../../../../../../*.txt
