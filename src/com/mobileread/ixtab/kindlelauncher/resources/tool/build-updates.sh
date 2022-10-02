@@ -35,7 +35,7 @@ cp -f ../../../../../../../KUALBooklet.jar ../booklet/install/KUALBooklet.jar
 # Install (>= 5.1.2)
 kindletool create ota2 "${KT_PM_FLAGS[@]}" -d kindle5 -s 1679530004 -C ../booklet/install Update_${PKGNAME}_${PKGVER}_install.bin
 # Hotfix (>= 5.12.2)
-kindletool create ota2 -d paperwhite2 -d basic -d voyage -d paperwhite3 -d oasis -d basic2 -d oasis2 -d paperwhite4 -d basic3 -d oasis3 -d paperwhite5 -O -s 3556150002 -C ../booklet/install Update_${PKGNAME}_hotfix_${PKGVER}_install.bin
+kindletool create ota2 -d paperwhite2 -d basic -d voyage -d paperwhite3 -d oasis -d basic2 -d oasis2 -d paperwhite4 -d basic3 -d oasis3 -d paperwhite5 -d scribe -O -s 3556150002 -C ../booklet/install Update_${PKGNAME}_hotfix_${PKGVER}_install.bin
 # Uninstall
 kindletool create ota2 "${KT_PM_FLAGS[@]}" -d kindle5 -C ../booklet/uninstall Update_${PKGNAME}_${PKGVER}_uninstall.bin
 
