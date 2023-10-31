@@ -2048,6 +2048,7 @@ function get_model(    file,line,device) {#{{{ >>global MODEL; return MODEL or `
 				: device ~ /^(11L)|(0WQ)|(0WP)|(0WN)|(0WM)|(0WL)$/ ? "KindleOasis3" \
 				: device ~ /^(1LG)|(1Q0)|(1PX)|(1VD)|(219)|(21A)|(2BH)|(2BJ)|(2DK)$/ ? "KindlePaperWhite5" \
 				: device ~ /^(22D)|(25T)|(23A)|(2AQ)|(2AP)|(1XH)|(22C)$/ ? "KindleBasic4" \
+				: device ~ /^(27J)|(2BL)|(263)|(227)|(2BM)|(23L)|(23M)|(270)$/ ? "KindleScribe" \
 				: "Unknown"
 		}
 	}
