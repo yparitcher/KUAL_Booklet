@@ -32,6 +32,9 @@ svn cat http://svn.ak-team.com/svn/Configs/trunk/Kindle/Touch_Hacks/Common/lib/l
 # Also, we kind of need the Booklet itself ;).
 cp -f ../../../../../../../KUALBooklet.jar ../booklet/install/KUALBooklet.jar
 
+# Package for all the things, I no longer have time to monitor which devices are actually seen in the wild...
+export KT_WITH_UNKNOWN_DEVCODES=1
+
 # Install (>= 5.1.2)
 kindletool create ota2 "${KT_PM_FLAGS[@]}" -d kindle5 -s 1679530004 -C ../booklet/install Update_${PKGNAME}_${PKGVER}_install.bin
 # Hotfix (>= 5.12.2)
