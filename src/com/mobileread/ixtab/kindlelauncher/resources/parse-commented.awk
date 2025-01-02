@@ -2052,6 +2052,9 @@ function get_model(    file,line,device) {#{{{ >>global MODEL; return MODEL or `
 				: device ~ /^(1LG)|(1Q0)|(1PX)|(1VD)|(219)|(21A)|(2BH)|(2BJ)|(2DK)$/ ? "KindlePaperWhite5" \
 				: device ~ /^(22D)|(25T)|(23A)|(2AQ)|(2AP)|(1XH)|(22C)$/ ? "KindleBasic4" \
 				: device ~ /^(27J)|(2BL)|(263)|(227)|(2BM)|(23L)|(23M)|(270)$/ ? "KindleScribe" \
+				: device ~ /^(3L5)|(3L6)|(3L4)|(3L3)|(A89)|(3L2)|(3KM)$/ ? "KindleBasic5" \
+				: device ~ /^(349)|(346)|(33X)|(33W)|(3HA)|(3H5)|(3H3)|(3H8)|(3J5)|(3JS)$/ ? "KindlePaperWhite6" \
+				: device ~ /^(3H9)|(3H4)|(3HB)|(3H6)|(3H2)|(34X)|(3H7)|(3JT)|(3J6)|(456)$/ ? "KindleColorSoft" \
 				: "Unknown"
 		}
 	}
