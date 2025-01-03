@@ -73,10 +73,12 @@
 				<exclude name="**/KualBooklet*.class"/>
 			</fileset>
 
-			<!-- jailbreak frontend, required -->
+			<!-- jailbreak frontend, was only required by the Kindlet variant -->
+			<!--
 			<zipfileset src="lib/jailbreak.jar">
 				<include name="**/*.class"/>
 			</zipfileset>
+			-->
 
 			<!-- resources -->
 			<fileset dir="src/">
