@@ -97,9 +97,9 @@
 				<include name="${product.image}"/>
 			</fileset>
 		</jar>
-		<signjar jar="${file}" keystore="${sign.keystore.file}" storepass="${sign.keystore.password}" alias="dk${sign.aliases}" sigalg="SHA1withDSA" digestalg="SHA1"/>
-		<signjar jar="${file}" keystore="${sign.keystore.file}" storepass="${sign.keystore.password}" alias="di${sign.aliases}" sigalg="SHA1withDSA" digestalg="SHA1"/>
-		<signjar jar="${file}" keystore="${sign.keystore.file}" storepass="${sign.keystore.password}" alias="dn${sign.aliases}" sigalg="SHA1withDSA" digestalg="SHA1"/>
+		<signjar jar="${file}" keystore="${sign.keystore.file}" storepass="${sign.keystore.password}" alias="dk${sign.aliases}" sigalg="SHA256withRSA" digestalg="SHA-256"/>
+		<signjar jar="${file}" keystore="${sign.keystore.file}" storepass="${sign.keystore.password}" alias="di${sign.aliases}" sigalg="SHA256withRSA" digestalg="SHA-256"/>
+		<signjar jar="${file}" keystore="${sign.keystore.file}" storepass="${sign.keystore.password}" alias="dn${sign.aliases}" sigalg="SHA256withRSA" digestalg="SHA-256"/>
 
 		<antcall target="restore-parser"/>
 	</target>
