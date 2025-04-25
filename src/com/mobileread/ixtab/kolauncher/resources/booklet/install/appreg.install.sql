@@ -1,3 +1,4 @@
+BEGIN TRANSACTION;
 INSERT OR IGNORE INTO "handlerIds" VALUES('com.mobileread.ixtab.kolauncher');
 INSERT OR IGNORE INTO "properties" VALUES('com.mobileread.ixtab.kolauncher','lipcId','com.mobileread.ixtab.kolauncher');
 INSERT OR IGNORE INTO "properties" VALUES('com.mobileread.ixtab.kolauncher','jar','/opt/amazon/ebook/booklet/KOLBooklet.jar');
@@ -17,3 +18,4 @@ INSERT OR IGNORE INTO "extenstions" VALUES('kol','MT:image/x.kol');
 INSERT OR IGNORE INTO "properties" VALUES('archive.displaytags.mimetypes','image/x.kol','KOReader');
 INSERT OR IGNORE INTO "associations" VALUES('com.lab126.generic.extractor','extractor','GL:*.kol','true');
 INSERT OR IGNORE INTO "associations" VALUES('com.mobileread.ixtab.kolauncher','application','MT:image/x.kol','true');
+COMMIT;
